@@ -5,27 +5,12 @@ RewriteCond %{HTTP_HOST} ^roc4et.de[nc]
 RewriteRule ^(.*)$ http://www.roc4et.de/$1 [r=301,nc]
 
 //Password Protect file
-<Files login.html>
+<Files /login.html>
 AuthName "Prompt"
 AuthType Basic
-AuthUserFile .htpasswd
+AuthUserFile /.htpasswd
 Require valid-user
 </Files>
-
-//Custom 400 errors
-ErrorDocument 400 index.html
-
-//Custom 401 errors
-ErrorDocument 401 index.html
-
-//Custom 403 errors
-ErrorDocument 403 index.html
-
-//Custom 404 errors
-ErrorDocument 404 index.html
-
-//Custom 500 errors
-ErrorDocument 500 index.html
 
 //Block bad bots
 RewriteEngine On 
