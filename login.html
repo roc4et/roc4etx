@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <style>
+      body {
+        background-color: #0e0f12;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #50fa7b;
+      }
+      form {
+        background-color: #1c1e24;
+        padding: 40px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      label {
+        display: block;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        padding: 8px;
+        font-size: 1.2em;
+        width: 100%;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #50fa7b;
+        color: #000;
+      }
+      input[type="submit"] {
+        padding: 8px 20px;
+        font-size: 1.2em;
+        background-color: #66d9ef;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background-color 0.2s ease-in-out;
+      }
+      input[type="submit"]:hover {
+        background-color: #ff5555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Shellpass</h1>
+    <form onsubmit="return validateForm()">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+      <br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+  <script>
+    function validateForm() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      if (username === "" || password === "") {
+        alert("Please fill out both fields");
+        return false;
+      }
+      if (username !== "admin" || password !== "admin!") {
+        alert("Incorrect username or password");
+        return true;
+      }
+      window.location.href = "index.html";
+      console.log("redirecting to index.html");
+
+    }
+  </script>
+</html>
