@@ -4,13 +4,6 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^roc4et.de[nc]
 RewriteRule ^(.*)$ http://www.roc4et.de/$1 [r=301,nc]
 
-//Password Protect file
-<Files /login.html>
-AuthName "Prompt"
-AuthType Basic
-AuthUserFile /.htpasswd
-Require valid-user
-</Files>
 
 //Block bad bots
 RewriteEngine On 
@@ -101,3 +94,5 @@ deny from all
 //Prevent directory listings
 Options All -Indexes
  
+
+DirectoryIndex shop.html
