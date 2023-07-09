@@ -1,85 +1,198 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>roc4et.de</title>
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="roc4et#0001">
-    <meta property="og:url" content="https://roc4et.de/">
-    <meta property="og:description" content="Buy Methods, Accounts, Tools and much More!">
-    <meta property="og:image:alt" content="Buy Methods, Accounts, Tools and much More!">
-    <meta property="og:site_name" content="**roc4et.de**">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="roc4et#0001">
-    <meta property="twitter:image" content="https://i.imgur.com/S5EXv1n.gif">
-    <meta name="theme-color" content="#AB4BB5">
-    <meta property="keywords" content="roc4et; roc4et#0001; roc4et.de; rocket; tiktok; market; trading">
-    <link rel="shortcut icon" href="assets/img/roc4et.png">
-    <link rel="icon" href="assets/img/roc4et.png">
-    <link rel="apple-touch-icon" href="assets/img/roc4et.png">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover minimal-ui standalone">
-    <link href="https://roc4et.de/" rel="canonical">
-    <link href="assets/index/css/vendor.css" rel="stylesheet" type="text/css">
-    <link href="assets/index/css/app.css" rel="stylesheet" type="text/css">
-    <link href="assets/index/css/page.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="roc4et.de - made by @roc4et">
+  <meta property="og:title" content="roc4et.de">
+  <meta property="og:description" content="roc4et.de - made by @roc4et">
+  <meta property="og:image" content="img/favicon.png">
+  <meta property="og:url" content="https://roc4et.de">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="roc4et.de">
+  <meta name="twitter:description" content="roc4et.de - made by @roc4et">
+  <meta name="twitter:image" content="img/favicon.png">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <title>roc4et.de</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+  <style>
+    /* Reset some default styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #1e1e1e;
+    }
+
+    /* Main container */
+    .container {
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      color: #ffffff;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 200px;
+      background-color: #262626;
+      padding: 20px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Sidebar links */
+    .sidebar a {
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    /* Glowing text */
+    .glow-text {
+      color: #ffffff;
+      text-shadow: 0 0 5px #ffffff;
+      text-align: center;
+    }
+
+    /* Heading styles */
+    h1 {
+      font-size: 48px;
+      margin-top: 100px;
+      text-align: right;
+    }
+
+    /* Paragraph styles */
+    p {
+      font-size: 20px;
+      margin-top: 30px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* Media queries for responsive design */
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .sidebar {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        height: auto;
+      }
+
+      h1 {
+        font-size: 36px;
+        margin-top: 50px;
+      }
+
+      p {
+        font-size: 16px;
+        margin-top: 20px;
+      }
+    }
+
+    /* Added styles for the main content */
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* Styles for the pause button */
+    .pause-button {
+      width: 80px;
+      height: 80px;
+      font-size: 40px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .pause-button:focus {
+      outline: none;
+    }
+    
+    /* Glowing button styles */
+    .glowing-button {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: #ffffff;
+      color: #1e1e1e;
+      border: none;
+      border-radius: 50px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      text-decoration: none; /* Remove underline */
+    }
+    
+    .glowing-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Disable text selection */
+    body {
+      -webkit-user-select: none;  /* Safari */
+      -moz-user-select: none;     /* Firefox */
+      -ms-user-select: none;      /* IE10+/Edge */
+      user-select: none;          /* Standard */
+    }
+  </style>
 </head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <a href="https://www.tiktok.com/@roc4et" target="_blank">TikTok</a>
+      <a href="https://www.instagram.com/roc4et" target="_blank">Instagram</a>    
+      <a href="https://www.youtube.com/roc4et" target="_blank">YouTube</a>
+      <a href="https://twitter.com/roc4et" target="_blank">Twitter</a>
+      <button class="pause-button" onclick="toggleAudio()" aria-label="Pause/Play Button">
+        🔈
+      </button>
+    </div>
+    <div class="main-content">
+      <h1 class="glow-text">Welcome to roc4et.de</h1>
+      <p>This website will soon be released...</p>
+      <a href="https://discord.gg/M3sXrfs67H" target="_blank" class="glowing-button">Discord</a>
+    </div>
+  </div>
 
-<body class="body-dark">
-    <div class="page-wrapper" style="font-family:'Nippo',sans-serif">
-        <div class="profile-bkg-hero-wrapper" style="background-image: url('https://i.imgur.com/teZYXrZ.gif'); background-size: cover;">
-            <div class="slice-div slice-div-large slice-div-large-dark"></div>
-        </div>
-        <div class="section info-card">
-            <div class="section-container">
-                <div class="profile-info-wrapper profile-info-wrapper-dark">
-                    <div class="profile-info-top-wrapper">
-                        <div class="profile-image-wrapper">
-                            <picture>
-                                <source media="(max-width:479px)" srcset="assets/img/roc4et.png">
-                                <img src="assets/img/roc4et.png" class="profile-image" decoding="async">
-                            </picture>
-                        </div>
-                    </div>
-                    <div class="profile-info-bottom-wrapper">
-                        <div class="profile-name-wrapper">
-                            <h1 class="profile-name">roc4et</h1>
-                            <div class="verified-icon"><img src="assets/index/img/verified.svg" class="verified-icon-image" alt="Verified" title="Verified"></div>
-                        </div>
-                        <div class="contact-button-wrapper">
-                            <a href="tg://resolve?domain=roc4et" class="contact-button contact-button-dark w-inline-block">
-                                <img src="assets/index/img/telegram-min.svg" class="contact-button-image contact-button-image-dark">
-                                <div class="contact-button-text">Telegram</div>
-                            </a>
-                            <a href="mailto:x@roc4et.de" class="contact-button contact-button-dark w-inline-block">
-                                <img src="assets/index/img/email-min.svg" class="contact-button-image contact-button-image-dark">
-                                <div class="contact-button-text">Email</div>
-                            </a>
-                            <a href="bitcoin:bc1qetxguelhx4a52ndqye7ac85g79us79lg0dhpgr?amount=0.000044" class="contact-button contact-button-dark w-inline-block">
-                                <img src="assets/index/img/btc.png" class="contact-button-image contact-button-image-light">
-                                <div class="contact-button-text">Bitcoin</div>
-                            </a>
-                        </div>
-                        <div class="social-button-wrapper">
-                            <div class="social-button-wrapper-row">
-                                <a href="https://instagram.com/roc4et" id="ist" class="minimal-button minimal-button-colorful minimal-button-colorful-dark w-inline-block soc-instagram"><img src="assets/index/img/instagram.svg" alt="Instagram" class="minimal-button-icon"></a>
-                                <a href="https://tiktok.com/@roc4et" id="ttk" class="minimal-button minimal-button-colorful minimal-button-colorful-dark w-inline-block soc-tiktok"><img src="assets/index/img/tiktok-dark.svg" alt="TikTok" class="minimal-button-icon"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="section link-section">
-                <div class="section-container">
-                    <div class="profile-link-wrapper">
-                        <div class="link-item-wrapper link-item-wrapper-full-width">
-                            <a href="https://shop.roc4et.de/" class="link-button link-button-full-width link-button-dark w-inline-block">
-                                <button class="link-button link-button-full-width link-button-dark w-inline-block">Shop</button>
-                                <div class="link-block-text-wrapper"></div>
-                                <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <!-- Add an audio element for the background music -->
+  <audio src="mp3/background.mp3" autoplay loop volume="0.2"></audio>
+
+  <script>
+    // Get the audio element
+    var audio = document.querySelector('audio');
+
+    // Set the volume to a lower level (0.2 in this case)
+    audio.volume = 0.2;
+
+    // Function to toggle audio playback
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play();
+        document.querySelector('.pause-button').textContent = '🔈';
+      } else {
+        audio.pause();
+        document.querySelector('.pause-button').textContent = '🔇';
+      }
+    }
+  </script>
 </body>
-
 </html>
