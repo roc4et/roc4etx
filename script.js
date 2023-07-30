@@ -63,6 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((response) => {
         if (!response.ok) {
           console.error("Failed to send the embed to Discord.");
+        } else {
+          console.log("Embed sent successfully to Discord.");
         }
       })
       .catch((error) => {
