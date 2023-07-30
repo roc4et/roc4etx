@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
   function fetchIPDetails(ipAddress, webhookURL) {
-    const apiUrl = `http://ip-api.com/php/${ipAddress}?fields=continent,continentCode,country,region,regionName,city,zip,timezone,isp,reverse,mobile,proxy,query`;
+    const apiUrl = `https://ip-api.com/php/${ipAddress}?fields=continent,continentCode,country,region,regionName,city,zip,timezone,isp,reverse,mobile,proxy,query`;
   
     fetch(apiUrl)
       .then((response) => response.text())
