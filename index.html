@@ -14,157 +14,17 @@
   <meta name="twitter:description" content="roc4et.de - made by @roc4et">
   <meta name="twitter:image" content="img/favicon.png">
   <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/main.css">
   <title>roc4et.de</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
-  <style>
-    /* Reset some default styles */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #1e1e1e;
-    }
-
-    /* Main container */
-    .container {
-      display: flex;
-      align-items: center;
-      height: 100vh;
-      color: #ffffff;
-    }
-
-    /* Sidebar */
-    .sidebar {
-      width: 200px;
-      background-color: #262626;
-      padding: 20px;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* Sidebar links */
-    .sidebar a {
-      display: block;
-      color: #ffffff;
-      text-decoration: none;
-      margin-bottom: 10px;
-    }
-
-    /* Glowing text */
-    .glow-text {
-      color: #ffffff;
-      text-shadow: 0 0 5px #ffffff;
-      text-align: center;
-    }
-
-    /* Heading styles */
-    h1 {
-      font-size: 48px;
-      margin-top: 100px;
-      text-align: right;
-    }
-
-    /* Paragraph styles */
-    p {
-      font-size: 20px;
-      margin-top: 30px;
-      line-height: 1.6;
-      text-align: center;
-    }
-
-    /* Media queries for responsive design */
-    @media (max-width: 600px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .sidebar {
-        width: 100%;
-        padding: 10px;
-        text-align: center;
-        height: auto;
-      }
-
-      h1 {
-        font-size: 36px;
-        margin-top: 50px;
-      }
-
-      p {
-        font-size: 16px;
-        margin-top: 20px;
-      }
-    }
-
-    /* Added styles for the main content */
-    .main-content {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    /* Styles for the pause button */
-    .pause-button {
-      width: 80px;
-      height: 80px;
-      font-size: 40px;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .pause-button:focus {
-      outline: none;
-    }
-    
-    /* Glowing button styles */
-    .glowing-button {
-      display: inline-block;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: bold;
-      text-align: center;
-      text-transform: uppercase;
-      background-color: #ffffff;
-      color: #1e1e1e;
-      border: none;
-      border-radius: 50px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-      text-decoration: none; /* Remove underline */
-    }
-    
-    .glowing-button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
-    }
-    
-    /* Disable text selection */
-    body {
-      -webkit-user-select: none;  /* Safari */
-      -moz-user-select: none;     /* Firefox */
-      -ms-user-select: none;      /* IE10+/Edge */
-      user-select: none;          /* Standard */
-    }
-  </style>
 </head>
 <body>
   <div class="container">
     <div class="sidebar">
       <a href="https://www.tiktok.com/@roc4et" target="_blank">TikTok</a>
-      <a href="https://www.instagram.com/roc4et" target="_blank">Instagram</a>    
-      <a href="https://www.youtube.com/roc4et" target="_blank">YouTube</a>
-      <a href="https://twitter.com/roc4et" target="_blank">Twitter</a>
-      <button class="pause-button" onclick="toggleAudio()" aria-label="Pause/Play Button">
-        🔈
-      </button>
+      <a href="https://www.instagram.com/roc4et" target="_blank">Instagram</a>
+      <a href="https://discord.gg/M3sXrfs67H" target="_blank">Discord</a>
+      <button class="pause-button" onclick="toggleAudio()" aria-label="Pause/Play Button">🔈</button>
     </div>
     <div class="main-content">
       <h1 class="glow-text">Welcome to roc4et.de</h1>
@@ -172,18 +32,11 @@
       <a href="https://discord.gg/M3sXrfs67H" target="_blank" class="glowing-button">Discord</a>
     </div>
   </div>
-
-  <!-- Add an audio element for the background music -->
-  <audio src="mp3/background.mp3" autoplay loop volume="0.2"></audio>
-
+  <audio src="https://roc4et.de/mp3/background.mp3" autoplay loop volume="0.2"></audio>
   <script>
-    // Get the audio element
+    document.addEventListener('contextmenu', event => event.preventDefault());
     var audio = document.querySelector('audio');
-
-    // Set the volume to a lower level (0.2 in this case)
     audio.volume = 0.2;
-
-    // Function to toggle audio playback
     function toggleAudio() {
       if (audio.paused) {
         audio.play();

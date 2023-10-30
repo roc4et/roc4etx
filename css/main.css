@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1e1e1e;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #262626;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  
+  .glow-text {
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 48px;
+    margin-top: 100px;
+    text-align: right;
+  }
+  
+  p {
+    font-size: 20px;
+    margin-top: 30px;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .sidebar {
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      height: auto;
+    }
+  
+    h1 {
+      font-size: 36px;
+      margin-top: 50px;
+    }
+  
+    p {
+      font-size: 16px;
+      margin-top: 20px;
+    }
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pause-button {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .pause-button:focus {
+    outline: none;
+  }
+  
+  .glowing-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    color: #1e1e1e;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+  }
+  
+  .glowing-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+  }
+  
+  body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
