@@ -21,12 +21,17 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
 </head>
 <body>
+  <div id="overlay">
+    <div class="overlay-content">
+      <p class="glow-text">[Click to Enter]</p>
+    </div>
+  </div>
   <div class="container">
     <div class="sidebar">
       <a href="https://www.tiktok.com/@roc4et" target="_blank">TikTok</a>
       <a href="https://www.instagram.com/roc4et" target="_blank">Instagram</a>
       <a href="https://discord.gg/M3sXrfs67H" target="_blank">Discord</a>
-      <button class="pause-button" onclick="toggleAudio()" aria-label="Pause/Play Button">🎵</button>
+      <button class="pause-button" aria-label="Pause/Play Button">🎵</button>
     </div>
     <div class="main-content">
       <h1 class="glow-text">Welcome to roc4et.de</h1>
@@ -34,21 +39,33 @@
       <a href="products.html" target="_self" class="glowing-button">Our Products</a>
     </div>
   </div>
-
-  <audio src="mp3/background.mp3" autoplay loop volume="0.2"></audio>
+  <audio id="backgroundAudio" src="mp3/background.mp3" autoplay loop volume="0.2"></audio>
   <script>
     document.addEventListener('contextmenu', event => event.preventDefault());
-    var audio = document.querySelector('audio');
+    var audio = document.getElementById('backgroundAudio');
     audio.volume = 0.2;
+
     function toggleAudio() {
       if (audio.paused) {
         audio.play();
-        document.querySelector('.pause-button').textContent = '🔈';
+        document.querySelector('.pause-button').innerHTML = '🔈';
       } else {
         audio.pause();
-        document.querySelector('.pause-button').textContent = '🔇';
+        document.querySelector('.pause-button').innerHTML = '🔇';
       }
     }
+    document.addEventListener('DOMContentLoaded', function () {
+      var overlay = document.getElementById('overlay');
+      function hideOverlay() {
+        overlay.classList.add('hidden');
+        toggleAudio();
+      }
+      document.addEventListener('click', hideOverlay);
+      overlay.addEventListener('click', function (event) {
+        event.stopPropagation();
+      });
+      overlay.querySelector('.overlay-content').addEventListener('click', hideOverlay);
+    });
   </script>
 </body>
 </html>
