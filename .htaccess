@@ -95,4 +95,6 @@ deny from all
 Options All -Indexes
  
 
-DirectoryIndex shop.html
+DirectoryIndex index.html
+
+ErrorDocument 404 http://roc4et.de/
