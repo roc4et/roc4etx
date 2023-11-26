@@ -16,6 +16,7 @@ body {
   margin-bottom: auto;
 }
 
+
 .product {
   display: flex;
   flex-direction: column;
@@ -23,6 +24,7 @@ body {
   text-align: center;
   margin: 20px;
   width: calc(33.33% - 40px); /* Set maximum of 3 products in a row */
+  
 }
 
 .product img {
