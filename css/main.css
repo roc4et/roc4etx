@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: url('../img/1.gif') no-repeat center center fixed;
+    background: url('https://roc4et.de/img/1.gif') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
