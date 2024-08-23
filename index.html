@@ -5,66 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="roc4et.de - made by @roc4et">
   <meta property="og:title" content="roc4et Services">
-  <meta property="og:description" content="roc4et.de - made by @roc4et">
+  <meta property="og:description" content="Explore roc4et's exclusive services and community.">
   <meta property="og:image" content="https://roc4et.de/img/banner.png">
-  <meta property="og:image:secure_url" content="https://roc4et.de/img/banner.png">
   <meta property="og:url" content="https://roc4et.de">
   <meta property="og:type" content="website">
+  <meta property="og:image:secure_url" content="https://roc4et.de/img/banner.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="roc4et Services">
+  <meta name="twitter:description" content="Discover unique services provided by roc4et.">
+  <meta name="twitter:image" content="https://roc4et.de/img/banner.png">
   <meta name="theme-color" content="#f54269">
-  <meta name="twitter:description" content="roc4et.de - made by @roc4et">
-  <meta name="twitter:image" content="img/favicon.png">
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>@roc4et - Home</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
 </head>
 <body>
-  <div id="overlay">
-    <div class="overlay-content">
-      <p class="glow-text">[Click to Enter]</p>
-    </div>
-  </div>
-  <div class="container">
-    <div class="sidebar">
-      <a href="https://www.tiktok.com/@roc4et" target="_blank">TikTok</a>
-      <a href="https://www.instagram.com/roc4et" target="_blank">Instagram</a>
-      <a href="discord.html" target="_blank">Discord</a>
-      <button class="pause-button" aria-label="Pause/Play Button">🎵</button>
-    </div>
-    <div class="main-content">
-      <h1 class="glow-text">Welcome to roc4et.de</h1>
-      <p>Your gamecheat supplier.</p>
-      <a href="products.html" target="_self" class="glowing-button">Our Products</a>
-    </div>
-  </div>
-  <audio id="backgroundAudio" src="mp3/background2.mp3" autoplay loop volume="0.2"></audio>
-  <script>
-    document.addEventListener('contextmenu', event => event.preventDefault());
-    var audio = document.getElementById('backgroundAudio');
-    audio.volume = 0.2;
+  <audio id="background-music" src="./mp3/background2.mp3" autoplay loop></audio>
 
-    function toggleAudio() {
-      if (audio.paused) {
-        audio.play();
-        document.querySelector('.pause-button').innerHTML = '🔈';
-      } else {
-        audio.pause();
-        document.querySelector('.pause-button').innerHTML = '🔇';
-      }
-    }
-    document.addEventListener('DOMContentLoaded', function () {
-      var overlay = document.getElementById('overlay');
-      function hideOverlay() {
-        overlay.classList.add('hidden');
-        toggleAudio();
-      }
-      document.addEventListener('click', hideOverlay);
-      overlay.addEventListener('click', function (event) {
-        event.stopPropagation();
-      });
-      overlay.querySelector('.overlay-content').addEventListener('click', hideOverlay);
+  <div class="main-container">
+    <div class="profile-section">
+      <img class="profile-image" src="https://roc4et.de/img/favicon.png" alt="Profile Image">
+      <div class="profile-info">
+        <h1 class="profile-username">roc4et</h1>
+        <p class="profile-network">1.5 million Network</p>
+        <p class="profile-joined">smoke some, drink some, pop one</p>
+      </div>
+      <div class="social-links">
+        <a href="https://discord.gg/PaqNwRxgu4" target="_blank"><i class="fab fa-discord"></i></a>
+        <a href="https://instagram.com/roc4et" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://tiktok.com/@roc4et" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://github.com/roc4et" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <div class="notification-banner">
+      <p><i class="fas fa-exclamation-circle"></i> roc4et.de - Work in progress</p>
+      <p>This site is <a href="#">WIP</a> and will soon be updated</p>
+    </div>
+
+    <div class="community-section">
+        <i class="fas fa-users"></i>
+        <p>Connect with a dynamic community and explore exclusive services.</p>
+        <button class="community-button" onclick="window.open('https://discord.gg/PaqNwRxgu4', '_blank')">
+            <i class="fas fa-sign-in-alt"></i> Join Now
+        </button>
+    </div>    
+
+    <div class="footer-section">
+      <div class="media-controls">
+        <i id="play-btn" class="fas fa-play"></i>
+        <i id="pause-btn" class="fas fa-pause" style="display:none;"></i>
+        <input type="range" id="progress-bar" value="0" min="0" max="100">
+      </div>
+      <div class="footer-icons">
+        <i class="fas fa-bell"></i>
+        <i class="fas fa-cog"></i>
+        <i class="fas fa-user-circle"></i>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const playButton = document.getElementById('play-btn');
+    const pauseButton = document.getElementById('pause-btn');
+    const audio = document.getElementById('background-music');
+    const progressBar = document.getElementById('progress-bar');
+
+    playButton.addEventListener('click', () => {
+      audio.play();
+      playButton.style.display = 'none';
+      pauseButton.style.display = 'inline';
+    });
+
+    pauseButton.addEventListener('click', () => {
+      audio.pause();
+      pauseButton.style.display = 'none';
+      playButton.style.display = 'inline';
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      const value = (audio.currentTime / audio.duration) * 100;
+      progressBar.value = value;
+    });
+
+    progressBar.addEventListener('input', () => {
+      const value = progressBar.value;
+      audio.currentTime = (value / 100) * audio.duration;
+    });
+
+    window.addEventListener('load', () => {
+      audio.play();
+      playButton.style.display = 'none';
+      pauseButton.style.display = 'inline';
     });
   </script>
 </body>
